@@ -1,5 +1,6 @@
 # Designing a Scalable Serverless Event-Driven Architecture on AWS for an E-Commerce Platform
 AWS serverless event-driven architecture for scalable e-commerce order processing using API Gateway, Lambda, SQS, DynamoDB, SNS, and CloudWatch.
+![<# alt text #>](Proposed_Architecture.png "Screenshot")
 
 ## Client Business Overview:
 The client has an E-Commerce business. They sell their products all over the world through their website. They have a dedicated “order service” that collects all the orders from across various frontends. The “order service” is hosted on-premises, which validates, authenticates, accepts, processes, and stores orders in the database (MySQL), which consists of one big table. The order service then triggers the other downstream services, like inventory, fulfilment, and accounting.
