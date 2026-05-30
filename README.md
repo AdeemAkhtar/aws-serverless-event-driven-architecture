@@ -32,13 +32,13 @@ Carefully analysing the business logic and description, we can visualise the cur
 To address the requirements provided, I designed a serverless, event-driven architecture. The summary goes as follows:
 ![<# alt text #>](Proposed_Architecture.png "Screenshot")
 
-**Amazon API Gateway:** Will act as a front door, receiving all requests/traffic from the frontend (mobile app, desktop, etc.). It authenticates incoming requests and validates their format before passing them on. 
-**Amazon SQS (Simple Queue Service):** Serves as a message queue that holds incoming order requests temporarily. This decouples the API from the processing logic, allowing smooth handling of traffic spikes.
-**AWS Lambda:** Runs the application code to process orders. One Lambda function reads messages from the SQS queue, processes the orders, and stores them in DynamoDB. Another Lambda function processes DynamoDB streams to send order updates downstream.
-**Amazon DynamoDB:** A fast, scalable NoSQL database that stores order data.
-**DynamoDB Streams:** Captures changes in the DynamoDB table (like new orders) and triggers the second Lambda function to handle downstream notifications.
-**Amazon SNS (Simple Notification Service):** Publishes order information to multiple subscribed services (fulfilment, accounting, inventory) using a fan-out pattern.
-**Amazon CloudWatch logs:** Collects monitoring data and logs from all services to help track performance and troubleshoot issues.
+* **Amazon API Gateway:** Will act as a front door, receiving all requests/traffic from the frontend (mobile app, desktop, etc.). It authenticates incoming requests and validates their format before passing them on. 
+* **Amazon SQS (Simple Queue Service):** Serves as a message queue that holds incoming order requests temporarily. This decouples the API from the processing logic, allowing smooth handling of traffic spikes.
+* **AWS Lambda:** Runs the application code to process orders. One Lambda function reads messages from the SQS queue, processes the orders, and stores them in DynamoDB. Another Lambda function processes DynamoDB streams to send order updates downstream.
+* **Amazon DynamoDB:** A fast, scalable NoSQL database that stores order data.
+* **DynamoDB Streams:** Captures changes in the DynamoDB table (like new orders) and triggers the second Lambda function to handle downstream notifications.
+* **Amazon SNS (Simple Notification Service):** Publishes order information to multiple subscribed services (fulfilment, accounting, inventory) using a fan-out pattern.
+* **Amazon CloudWatch logs:** Collects monitoring data and logs from all services to help track performance and troubleshoot issues.
 
 ## AWS Services Used
 * IAM
