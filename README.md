@@ -58,19 +58,19 @@ Security best practices were integrated throughout the architecture design:
 * Centralised monitoring and logging
 * Managed infrastructure, reducing attack surface
 
-## Business Outcome Matrix:
-* Reduced operational overhead
-* Improved scalability
-* Minimised failure propagation
-* Improved resilience
-* Lower infrastructure management burden
-
 ## Cost Optimisation:
 * Pay-per-use Lambda
 * Serverless scaling
 * Reduced infrastructure maintenance
 * No server management
 * DynamoDB on-demand scaling
+
+## Business Outcome Matrix:
+* Reduced operational overhead
+* Improved scalability
+* Minimised failure propagation
+* Improved resilience
+* Lower infrastructure management burden
 
 ## Final Thoughts
 This project demonstrated how modern AWS serverless architectures can improve scalability, reliability, operational efficiency, and fault tolerance for high-traffic business applications.
